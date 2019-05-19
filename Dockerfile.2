@@ -1,0 +1,31 @@
+# We deploy with ubuntu so that devs have a familiar environment.
+FROM ubuntu:18.04
+
+RUN apt-get update && apt-get install -y \
+	openssl \
+	net-tools \
+	git \
+	locales \
+	sudo \
+	dumb-init \
+	vim \
+	curl \
+	wget \ 
+	build-essential \
+	gdb \
+	valgrind \
+	cmake-curses-gui \
+	ninja-build \
+	llvm-dev \
+	clang \
+	libboost-dev \
+	qtbase5-dev \
+	lldb \
+	golang \
+	ruby \
+	python-dev \
+	python-pip \
+	htop \
+    clang-format \
+    clang-tidy \
+    ack-grep
