@@ -1,4 +1,4 @@
-FROM vscode:apt
+FROM ubuntu-cxx
 
 RUN locale-gen en_US.UTF-8
 # We unfortunately cannot use update-locale because docker will not use the env variables
@@ -16,7 +16,7 @@ WORKDIR /home/coder/project
 
 # This assures we have a volume mounted even if the user forgot to do bind mount.
 # So that they do not lose their data if they delete the container.
-VOLUME [ "/home/coder/project", "/home/coder/.local/share" ]
+VOLUME [ "/home/coder/project", "/home/coder/.local/share", "/home/coder/.gem", "/home/coder/.gopath" ]
 
 COPY code-server /usr/local/bin/code-server
 EXPOSE 8443

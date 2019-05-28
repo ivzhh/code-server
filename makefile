@@ -9,7 +9,7 @@ code-server : Dockerfile.1
 	docker container rm -f extract
 
 ubuntu.log : Dockerfile.2
-	docker build -t vscode:apt . -f Dockerfile.2 && touch ubuntu.log
+	docker build -t ubuntu-cxx . -f Dockerfile.2 && touch ubuntu.log
 	
 final : code-server ubuntu.log Dockerfile
 	docker build -t vscode:latest . && touch final.log
